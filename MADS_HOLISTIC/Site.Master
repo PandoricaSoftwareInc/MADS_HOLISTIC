@@ -13,7 +13,23 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <script type='text/javascript' src="/bootstrap.js"></script>
+    <script type='text/javascript' src="/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/functions.js"></script>
+    <script type="text/javascript" src="/Util.js"></script>
+    <script>
+        //starts the carousel
+        $('#myCarousel').carousel();
+    </script>
+    <style type="text/css">
+        .auto-style1 {
+            float: left;
+            height: 50px;
+            padding: 15px 15px;
+            font-size: x-large;
+            line-height: 20px;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -38,14 +54,14 @@
         </asp:ScriptManager>
 
         <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <div class="container" >
+                <div class="navbar-header" >
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" hidden="hidden">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="auto-style1" runat="server" href="~/">Holistic Goju Ryu</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -53,7 +69,7 @@
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <asp:LoginView runat="server" ViewStateMode="Disabled" Visible="False">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
